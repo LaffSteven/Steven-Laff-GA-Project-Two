@@ -7,5 +7,15 @@
     <body>
         <h1>Welcome to Arcane Planes</h1>
         <h2>MTG Card Database and Deckbuilder</h2>
+
+        <div class="list-container">
+            <ul id="hp-card-list">
+                <% for (let i = 0; i < cardList.length; i++) {%>
+                    <li> <a href="#"><%=cardList[i].name%></a> </li>
+                <% } %>
+            </ul>
+        </div>
+
+
     </body>
 </html>

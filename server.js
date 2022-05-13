@@ -78,7 +78,11 @@ app.get('/deck/data/seed', (req, res) => {
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.render('index.ejs');
+    Card.find({}, (err, cardData) => {
+        res.render('index.ejs', {
+            cardList: cardData
+        });
+    });
 });
 
 //___________________
