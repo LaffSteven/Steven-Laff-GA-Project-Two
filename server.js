@@ -94,12 +94,22 @@ app.get('/card/index', (req, res) => {
     });
 });
 
+// SHOW Card info page
 app.get('/card/:id', (req, res) => {
     // console.log(req.params.id);
-    Card.find({_id:req.params.id}, (err, cardInfo) => {
+    Card.find({_id:req.params.id}, (err, foundCard) => {
         // res.send(cardInfo[0])
         res.render('./card/show.ejs', {
-            card: cardInfo[0]
+            card: foundCard[0]
+        });
+    });
+});
+
+//GET card edit page
+app.get('/card/:id/edit', (req, res) => {
+    Card.find({_id:req.params.id}, (err, foundCard) => {
+        res.render('./card/edit.ejs', {
+            card: foundCard[0]
         });
     });
 });
