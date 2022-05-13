@@ -4,8 +4,8 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const Card = require('./models.card.js')
-const Deck = require('./models.deck.js')
+const Card = require('./models/card.js')
+const Deck = require('./models/deck.js')
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
