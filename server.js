@@ -94,6 +94,17 @@ app.get('/card/index', (req, res) => {
     });
 });
 
+// GET New Card Page
+app.get('/card/new', (req, res) => {
+    res.render('./card/new.ejs')
+});
+// POST new card
+app.post('/card', (req, res) => {
+    Card.create(req.body, (err, createdCard) => {
+        res.redirect('/card/index');
+    });
+});
+
 // SHOW Card info page
 app.get('/card/:id', (req, res) => {
     // console.log(req.params.id);

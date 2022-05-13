@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Arcane Planes | New Card Entry</title>
+    </head>
+    <body>
+
+        <h1>Enter New Card Info</h1>
+
+        <form class="" action="/card" method="post">
+            name: <input type="text" name="name" > <br>
+            Mana Cost: <br>
+                Red: <input class="mana-cost" type="number" name="manaCost.red">
+                Green: <input class="mana-cost" type="number" name="manaCost.green">
+                Blue: <input class="mana-cost" type="number" name="manaCost.blue">
+                White: <input class="mana-cost" type="number" name="manaCost.white">
+                Black: <input class="mana-cost" type="number" name="manaCost.black">
+                Colorless: <input class="mana-cost" type="number" name="manaCost.colorless">
+            <br>
+            img: <input type="text" name="img" ><br>
+            type: <input type="text" name="typleLine.type" ><br>
+            subtype: <input type="text" name="typleLine.subTypes" ><br>
+            rarity: <input type="text" name="rarity" ><br>
+            text: <input type="text" name="text" ><br>
+            stats:
+                power: <input type="text" name="stats.power" ><br>
+                toughness: <input type="text" name="stats.toughness" ><br>
+                loyalty: <input type="text" name="stats.loyalty" ><br>
+            misc: {
+                expansion: <input type="text" name="misc.expansion" ><br>
+                illustrator: <input type="text" name="misc.illustrator" ><br>
+                collectorNum: <input type="text" name="misc.collectorNum" ><br>
+                <br>
+                <input type="submit" name="" value="Save New Card">
+        </form>
+
+    </body>
+</html>
