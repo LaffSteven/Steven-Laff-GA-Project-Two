@@ -76,20 +76,30 @@ app.get('/deck/data/seed', (req, res) => {
 //___________________
 // Routes
 //___________________
-//Home Page
+//GET Home Page
 app.get('/' , (req, res) => {
     Card.find({}, (err, cardData) => {
         res.render('index.ejs', {
-            cardList: cardData
+            cards: cardData
         });
     });
 });
 
-//Card Index Page
-app.get('/card/index' , (req, res) => {
+// GET Card Index Page
+app.get('/card/index', (req, res) => {
     Card.find({}, (err, cardData) => {
         res.render('./card/index.ejs', {
-            cardList: cardData
+            cards: cardData
+        });
+    });
+});
+
+app.get('/card/:id', (req, res) => {
+    // console.log(req.params.id);
+    Card.find({_id:req.params.id}, (err, cardInfo) => {
+        // res.send(cardInfo[0])
+        res.render('./card/show.ejs', {
+            card: cardInfo[0]
         });
     });
 });

@@ -10,8 +10,8 @@
 
         <div class="list-container">
             <ul id="hp-card-list">
-                <% for (let i = 0; i < cardList.length; i++) {%>
-                    <li> <a href="#"><%=cardList[i].name%></a> </li>
+                <% for (let i = 0; i < cards.length; i++) {%>
+                    <li> <a href="/card/<%=cards[i]._id%>"> <%=cards[i].name%> </a> </li>
                 <% } %>
             </ul>
         </div>
