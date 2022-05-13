@@ -105,6 +105,13 @@ app.get('/card/:id', (req, res) => {
     });
 });
 
+//PUT Card ID
+app.put('/card/:id', (req, res) => {
+    Card.findByIdAndUpdate({_id:req.params.id}, req.body, {new:true}, (err, updatedCard) => {
+        res.redirect('/card/index');
+    });
+});
+
 //GET card edit page
 app.get('/card/:id/edit', (req, res) => {
     Card.find({_id:req.params.id}, (err, foundCard) => {

@@ -8,6 +8,24 @@
 
         <h1>Edit <%=card.name%></h1>
 
+        <form class="" action="/card/<%=card._id%>?_method=PUT" method="post">
+            name: <input type="text" name="name" value="<%=card.name%>"> <br>
+            img: <input type="text" name="img" value="<%=card.img%>"><br>
+            type: <input type="text" name="typleLine.type" value="<%=card.typeLine.type%>"><br>
+            subtype: <input type="text" name="typleLine.subTypes" value="<%=card.typeLine.subTypes%>"><br>
+            rarity: <input type="text" name="rarity" value="<%=card.rarity%>"><br>
+            text: <input type="text" name="text" value="<%=card.text%>"><br>
+            stats:
+                power: <input type="text" name="stats.power" value="<%=card.stats.power%>"><br>
+                toughness: <input type="text" name="stats.toughness" value="<%=card.stats.toughness%>"><br>
+                loyalty: <input type="text" name="stats.loyalty" value="<%=card.stats.loyalty%>"><br>
+            misc: {
+                expansion: <input type="text" name="misc.expansion" value="<%=card.misc.expansion%>"><br>
+                illustrator: <input type="text" name="misc.illustrator" value="<%=card.misc.expansion%>"><br>
+                collectorNum: <input type="text" name="misc.collectorNum" value="<%=card.misc.collectorNum%>"><br>
+                <br>
+                <input type="submit" name="" value="Save Changes">
+        </form>
 
     </body>
 </html>
