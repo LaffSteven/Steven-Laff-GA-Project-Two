@@ -10,7 +10,13 @@
         <h2><%=card.name%></h2>
         <img src="<%=card.img%>" alt="image of <%=card.name%> card">
 
-        <a href="/card/<%=card._id%>/edit"><button type="button" name="button">Edit <%=card.name%></button></a>
+        <nav>
+            <a href="/card/<%=card._id%>/edit"><button type="button" name="button">Edit <%=card.name%></button></a>
+            <form class="" action="/card/<%=card._id%>?_method=DELETE" method="POST">
+                <input type="submit" name="" value="Delete <%=card.name%>">
+            </form>
+        </nav>
+
 
     </body>
 </html>

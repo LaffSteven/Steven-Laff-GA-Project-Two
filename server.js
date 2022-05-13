@@ -112,6 +112,13 @@ app.put('/card/:id', (req, res) => {
     });
 });
 
+//DELETE card route
+app.delete('/card/:id', (req, res) => {
+    Card.deleteOne({_id: req.params.id}, (err, deletedCard) => {
+        res.redirect('/card/index');
+    });
+});
+
 //GET card edit page
 app.get('/card/:id/edit', (req, res) => {
     Card.find({_id:req.params.id}, (err, foundCard) => {
@@ -120,6 +127,7 @@ app.get('/card/:id/edit', (req, res) => {
         });
     });
 });
+
 
 //___________________
 //Listener
