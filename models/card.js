@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const cardSchema = new Schema({
+
     name: {type:String, required:true},
     manaCost: {
         red: Number,
@@ -17,6 +18,7 @@ const cardSchema = new Schema({
         type: {type:String, required:true},
         subTypes: [String]
     },
+    rarity: String,
     text: String,
     stats: {
         power: Number,

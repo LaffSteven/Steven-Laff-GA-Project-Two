@@ -4,6 +4,8 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const Card = require('./models.card.js')
+const Deck = require('./models.deck.js')
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
@@ -45,6 +47,31 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+
+//___________________
+// Seed Data
+//___________________
+//localhost:3000
+const cardSeed = require('./models/cardSeed.js')
+const deckSeed = require('./models/deckSeed.js')
+
+app.get('/card/data/seed', (req, res) => {
+    Card.insertMany(cardSeed, (err, cards) => {
+        if (err) {
+            console.log(err.message);
+        }
+        res.redirect('/');
+    });
+});
+
+app.get('/deck/data/seed', (req, res) => {
+    Deck.insertMany(deckSeed, (err, cards) => {
+        if (err) {
+            console.log(err.message);
+        }
+        res.redirect('/');
+    });
+});
 
 //___________________
 // Routes
