@@ -78,7 +78,7 @@ app.get('/deck/data/seed', (req, res) => {
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('This is my GA Unit 2 Project App!');
+  res.render('index.ejs');
 });
 
 //___________________
