@@ -76,10 +76,19 @@ app.get('/deck/data/seed', (req, res) => {
 //___________________
 // Routes
 //___________________
-//localhost:3000
+//Home Page
 app.get('/' , (req, res) => {
     Card.find({}, (err, cardData) => {
         res.render('index.ejs', {
+            cardList: cardData
+        });
+    });
+});
+
+//Card Index Page
+app.get('/card/index' , (req, res) => {
+    Card.find({}, (err, cardData) => {
+        res.render('./card/index.ejs', {
             cardList: cardData
         });
     });
