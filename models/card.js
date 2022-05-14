@@ -15,7 +15,7 @@ const cardSchema = new Schema({
     },
     img: {type:String, required:true},
     typeLine: {
-        type: {type:String, required:true},
+        mainType: String,
         subTypes: [String]
     },
     rarity: String,

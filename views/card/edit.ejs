@@ -11,8 +11,8 @@
         <form class="" action="/card/<%=card._id%>?_method=PUT" method="post">
             name: <input type="text" name="name" value="<%=card.name%>"> <br>
             img: <input type="text" name="img" value="<%=card.img%>"><br>
-            type: <input type="text" name="typleLine.type" value="<%=card.typeLine.type%>"><br>
-            subtype: <input type="text" name="typleLine.subTypes" value="<%=card.typeLine.subTypes%>"><br>
+            type: <input type="text" name="typeLine.mainType" value="<%=card.typeLine.mainType%>"><br>
+            subtype: <input type="text" name="typeLine.subTypes" value="<%=card.typeLine.subTypes%>"><br>
             rarity: <input type="text" name="rarity" value="<%=card.rarity%>"><br>
             text: <input type="text" name="text" value="<%=card.text%>"><br>
             stats:

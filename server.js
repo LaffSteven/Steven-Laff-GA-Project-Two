@@ -100,7 +100,13 @@ app.get('/card/new', (req, res) => {
 });
 // POST new card
 app.post('/card', (req, res) => {
+    console.log(req.body);
+    const cardConstructor = {}
     Card.create(req.body, (err, createdCard) => {
+        if (err) {
+            console.log(err.message);
+        }
+        console.log(createdCard);
         res.redirect('/card/index');
     });
 });
