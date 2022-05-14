@@ -36,7 +36,7 @@ header {
     text-align: center;
     margin-top: 0;
 }
-nav{
+.header-left nav{
     align-self: center;
 }
 .nav-link{

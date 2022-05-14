@@ -81,7 +81,7 @@ app.get('/' , (req, res) => {
     Card.find({}, (err, cardData) => {
         res.render('index.ejs', {
             cards: cardData,
-            titleTag: "AP Home"
+            titleTag: "Home"
         });
     });
 });
@@ -90,7 +90,8 @@ app.get('/' , (req, res) => {
 app.get('/card/index', (req, res) => {
     Card.find({}, (err, cardData) => {
         res.render('./card/index.ejs', {
-            cards: cardData
+            cards: cardData,
+            titleTag: "Card List"
         });
     });
 });
@@ -118,7 +119,8 @@ app.get('/card/:id', (req, res) => {
     Card.find({_id:req.params.id}, (err, foundCard) => {
         // res.send(cardInfo[0])
         res.render('./card/show.ejs', {
-            card: foundCard[0]
+            card: foundCard[0],
+            titleTag: foundCard[0].name
         });
     });
 });
