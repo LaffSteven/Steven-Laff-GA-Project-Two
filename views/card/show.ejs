@@ -25,34 +25,79 @@
                 </div>
                 <div class="card-data-container">
                     <div class="data-tables">
-                        <table>
-                            <tr>
-                                <th>Card Text</th>
-                            </tr>
-                            <tr>
-                                <td><%=card.text%></td>
-                            </tr>
-                        </table>
-                        <table>
-                            <tr>
-                                <td>Mana Cost:</td>
-                                <td><%=card.manaCost%></td>
-                            </tr>
-                            <tr>
-                                <td>Rarity:</td>
-                                <td><%=card.rarity%></td>
-                            </tr>
-                        </table>
-                        <table>
-                            <tr>
-                                <th>Type</th>
-                                <th>Subtype</th>
-                            </tr>
-                            <tr>
-                                <td><%=card.typeLine.mainType%></td>
-                                <td><%=card.typeLine.subTypes%></td>
-                            </tr>
-                        </table>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th>Card Text</th>
+                                </tr>
+                                <tr>
+                                    <td><%=card.text%></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <td>Mana Cost:</td>
+                                    <td>
+                                        <%let mc = ""%>
+                                        <%if (card.manaCost.red) {%>
+                                            <%mc = mc + "R:" + card.manaCost.red;%>
+                                        <% } %>
+                                        <%if (card.manaCost.blue) {%>
+                                            <%mc = mc + " " + "B:" + card.manaCost.blue;%>
+                                        <% } %>
+                                        <%if (card.manaCost.green) {%>
+                                            <%mc = mc + " " + "G:" + card.manaCost.green;%>
+                                        <% } %>
+                                        <%if (card.manaCost.white) {%>
+                                            <%mc = mc + " " + "W:" + card.manaCost.white;%>
+                                        <% } %>
+                                        <%if (card.manaCost.black) {%>
+                                            <%mc = mc + " " + "B:" + card.manaCost.black;%>
+                                        <% } %>
+                                        <%if (card.manaCost.colorless) {%>
+                                            <%mc = mc + " " + "C:" + card.manaCost.colorless;%>
+                                        <% } %>
+                                        <%= mc %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Rarity:</td>
+                                    <td><%=card.rarity%></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Subtype</th>
+                                </tr>
+                                <tr>
+                                    <td><%=card.typeLine.mainType%></td>
+                                    <td><%=card.typeLine.subTypes%></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <td>Expansion:</td>
+                                    <td><%=card.misc.expansion%></td>
+                                </tr>
+                                <tr>
+                                    <td>Illustrator:</td>
+                                    <td><%=card.misc.illustrator%></td>
+                                </tr>
+                                <tr>
+                                    <td>Collector Number:</td>
+                                    <td>#<%=card.misc.collectorNum%></td>
+                                </tr>
+                            </table>
+                        </div>
+
 
                     </div>
                 </div>

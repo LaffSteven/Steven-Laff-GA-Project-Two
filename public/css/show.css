@@ -29,9 +29,10 @@ body {
     align-items: center;
     height: inherit;
     width: 50%;
-    padding: .25em;
+    padding: 2em 0 2em 0;
 }
 .img-wrapper {
+    height: 100%;
     padding: 1em;
     background: rgba(255, 255, 255, 0.57);
     border-radius: 1.25em;
@@ -51,9 +52,21 @@ body {
     flex: 1 1 auto;
     width: 50%;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 .card-name-container {
     width: 100%;
+    background: rgba(255, 255, 255, 0.57);
+    border-radius: 1.25em;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.8px);
+    -webkit-backdrop-filter: blur(10.8px);
+    border: 1px solid rgba(255, 255, 255, 0.57);
+    margin-bottom: 4em;
+    align-self: flex-start;
 }
 .card-name-container h2 {
     text-align: center;
@@ -62,16 +75,22 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+}
+.table-wrapper {
     background: rgba(255, 255, 255, 0.57);
     border-radius: 1.25em;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.8px);
     -webkit-backdrop-filter: blur(10.8px);
     border: 1px solid rgba(255, 255, 255, 0.57);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .data-tables table {
-    width: 90%;
+    width: 80%;
 }
 .data-tables td {
     text-align: center;
