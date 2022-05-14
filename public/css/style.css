@@ -1,6 +1,17 @@
 /* ########## ########## ########## ########## ########## */
 /* ########## ########## MAIN START ########## ########## */
 
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: rgb(242,164,26);
+    background: linear-gradient(22deg, rgba(242,164,26,1) 0%, rgba(182,115,31,1) 50%, rgba(251,0,0,1) 100%);
+    background-size: 100%;
+}
+
 /* ########## ########## MAIN END ########## ########## */
 /* ########## ########## ########## ########## ########## */
 
@@ -9,8 +20,9 @@
 header {
     width: 100%;
     height: 150px;
-    background: rgb(242,164,26);
+    /* background: rgb(242,164,26);
     background: linear-gradient(8deg, rgba(242,164,26,1) 0%, rgba(182,115,31,1) 48%, rgba(251,0,0,1) 100%);
+    margin-bottom: 2em; */
 }
 .header-container {
     display: flex;

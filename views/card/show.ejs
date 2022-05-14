@@ -3,6 +3,7 @@
 
     <!-- Head -->
     <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/show.css">
     <!-- Head -->
 
     <body>
@@ -11,10 +12,54 @@
         <%- include ('../partials/header.ejs') %>
         <!-- Header -->
 
-        <h1>Card Info</h1>
+        <div class="card-container">
+            <div class="img-container">
+                <div class="img-wrapper">
+                    <img src="<%=card.img%>" alt="image of <%=card.name%> card">
+                </div>
 
-        <h2><%=card.name%></h2>
-        <img src="<%=card.img%>" alt="image of <%=card.name%> card">
+            </div>
+            <div class="info-container">
+                <div class="card-name-container">
+                    <h2><%=card.name%></h2>
+                </div>
+                <div class="card-data-container">
+                    <div class="data-tables">
+                        <table>
+                            <tr>
+                                <th>Card Text</th>
+                            </tr>
+                            <tr>
+                                <td><%=card.text%></td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>Mana Cost:</td>
+                                <td><%=card.manaCost%></td>
+                            </tr>
+                            <tr>
+                                <td>Rarity:</td>
+                                <td><%=card.rarity%></td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <th>Type</th>
+                                <th>Subtype</th>
+                            </tr>
+                            <tr>
+                                <td><%=card.typeLine.mainType%></td>
+                                <td><%=card.typeLine.subTypes%></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
 
         <nav>
             <a href="/card/index"> <button type="button" name="button">Card Index</button> </a>
