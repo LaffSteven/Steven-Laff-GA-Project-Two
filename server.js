@@ -98,7 +98,9 @@ app.get('/card/index', (req, res) => {
 
 // GET New Card Page
 app.get('/card/new', (req, res) => {
-    res.render('./card/new.ejs')
+    res.render('./card/new.ejs', {
+        titleTag: "New Card Entry"
+    })
 });
 // POST new card
 app.post('/card', (req, res) => {
@@ -143,7 +145,8 @@ app.delete('/card/:id', (req, res) => {
 app.get('/card/:id/edit', (req, res) => {
     Card.find({_id:req.params.id}, (err, foundCard) => {
         res.render('./card/edit.ejs', {
-            card: foundCard[0]
+            card: foundCard[0],
+            titleTag: "Edit - " + foundCard[0].name
         });
     });
 });
