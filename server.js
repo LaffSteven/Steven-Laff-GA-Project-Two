@@ -80,7 +80,8 @@ app.get('/deck/data/seed', (req, res) => {
 app.get('/' , (req, res) => {
     Card.find({}, (err, cardData) => {
         res.render('index.ejs', {
-            cards: cardData
+            cards: cardData,
+            titleTag: "AP Home"
         });
     });
 });
