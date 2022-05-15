@@ -3,6 +3,10 @@
 
     <!-- Head -->
     <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/card-index.css">
+    <script src=".../scripts/card-index.js" type="text/javascript">
+
+    </script>
     <!-- Head -->
 
     <body>
@@ -13,19 +17,25 @@
 
         <h1>List of cards</h1>
 
-        <div class="list-container">
-            <ul id="hp-card-list">
-                <% for (let i = 0; i < cards.length; i++) {%>
-                    <li> <a href="/card/<%=cards[i]._id%>"><%=cards[i].name%></a> </li>
-                <% } %>
-            </ul>
-        </div>
-        <br>
-        <br>
-        <br>
-        <nav>
-            <a href="/card/new"> <button type="button" name="button">Add New Card</button> </a>
-        </nav>
+        <section class="content-section">
+            <div class="card-list-container">
+                <ul id="hp-card-list">
+                    <% for (let i = 0; i < cards.length; i++) {%>
+                        <li> <a href="/card/<%=cards[i]._id%>"><%=cards[i].name%></a> </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="card-serach-container">
+                <div class="card-search-bar">
+                    <h3>Card Search</h3>
+                    <span class="search-bar">
+                    </span>
+                </div>
+            </div>
+            <nav>
+                <a href="/card/new"> <button type="button" name="button">Add New Card</button> </a>
+            </nav>
+        </section>
 
         <!-- Footer -->
         <%- include ('../partials/footer.ejs') %>

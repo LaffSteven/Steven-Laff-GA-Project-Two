@@ -1,0 +1,40 @@
+.content-section {
+    flex: 1;
+    height: 50%;
+    width: 100%;
+    padding: 3em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.card-list-container {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.57);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.8px);
+    -webkit-backdrop-filter: blur(10.8px);
+    border: 1px solid rgba(255, 255, 255, 0.57);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+#hp-card-list {
+    padding-left: 33%;
+}
+
+.card-serach-container {
+    width: 450px;
+    background: rgba(255, 255, 255, 0.57);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.8px);
+    -webkit-backdrop-filter: blur(10.8px);
+    border: 1px solid rgba(255, 255, 255, 0.57);
+}
+.card-search-bar {
+    margin: auto;
+}
+.card-search-bar h3 {
+    text-align: center;
+}
