@@ -23,19 +23,8 @@
                 <div class="card-name-container">
                     <h2><%=card.name%></h2>
                 </div>
-                <div class="card-data-container">
+                <!-- <div class="card-data-container"> -->
                     <div class="data-tables">
-                        <div class="table-wrapper">
-                            <table>
-                                <tr>
-                                    <th>Card Text</th>
-                                </tr>
-                                <tr>
-                                    <td><%=card.text%></td>
-                                </tr>
-                            </table>
-                        </div>
-
                         <div class="table-wrapper">
                             <table>
                                 <tr>
@@ -63,9 +52,13 @@
                                         <%= mc %>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Rarity:</td>
-                                    <td><%=card.rarity%></td>
+                            </table>
+                        </div>
+                        <div class="table-wrapper" id="card-text-table-wrapper">
+                            <h4>Card Text</h4>
+                            <table id="card-text-table">
+                                <tr id="card-text-box">
+                                    <td><%=card.text%></td>
                                 </tr>
                             </table>
                         </div>
@@ -81,6 +74,15 @@
                                 </tr>
                             </table>
                         </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <td>Rarity:</td>
+                                    <td><%=card.rarity%></td>
+                                </tr>
+                            </table>
+                        </div>
+
                         <div class="table-wrapper">
                             <table>
                                 <tr>
@@ -100,7 +102,7 @@
 
 
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
 
