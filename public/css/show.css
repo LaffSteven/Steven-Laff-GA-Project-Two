@@ -6,7 +6,7 @@ body {
 }
 
 .card-container {
-    margin: auto;
+    margin: 2em auto;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -17,12 +17,29 @@ body {
 
 .img-container {
     display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: inherit;
     width: 50%;
-    padding: 2em 0 2em 0;
+    padding: 1em 0 1em 0;
+    gap: .5em;
+}
+.img-container nav {
+    width: 66%;
+    padding: .25em 0 .25em 0;
+    background: rgba(255, 255, 255, 0.57);
+    border-radius: 1.25em;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.8px);
+    -webkit-backdrop-filter: blur(10.8px);
+    border: 1px solid rgba(255, 255, 255, 0.57);
+    display: flex;
+    justify-content: space-around;
+}
+.show-nav-button {
+    display: inline-block;
 }
 .img-wrapper {
     height: 100%;

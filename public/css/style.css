@@ -1,14 +1,17 @@
 /* ########## ########## ########## ########## ########## */
 /* ########## ########## MAIN START ########## ########## */
 
-html, body {
+html, body{
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
+    width: 100%;
     margin: 0;
     background: rgb(242,164,26);
-    background: linear-gradient(22deg, rgba(242,164,26,1) 0%, rgba(182,115,31,1) 50%, rgba(251,0,0,1) 100%);
+    background: linear-gradient(33deg, rgba(251,0,0,1) 0%,rgba(242,164,26,1) 35%, rgba(182,115,31,1) 65%, rgba(251,0,0,1) 100%);
     background-size: 100%;
 }
 

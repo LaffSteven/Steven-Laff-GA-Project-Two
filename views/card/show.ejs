@@ -17,7 +17,12 @@
                 <div class="img-wrapper">
                     <img src="<%=card.img%>" alt="image of <%=card.name%> card">
                 </div>
-
+                <nav>
+                    <a class="show-nav-button" href="/card/<%=card._id%>/edit"><button type="button" name="button">Edit <%=card.name%></button></a>
+                    <form class="show-nav-button" action="/card/<%=card._id%>?_method=DELETE" method="POST">
+                        <input type="submit" name="" value="Delete <%=card.name%>">
+                    </form>
+                </nav>
             </div>
             <div class="info-container">
                 <div class="card-name-container">
@@ -105,17 +110,5 @@
                 <!-- </div> -->
             </div>
         </div>
-
-        </div>
-
-        <nav>
-            <a href="/card/index"> <button type="button" name="button">Card Index</button> </a>
-            <a href="/card/<%=card._id%>/edit"><button type="button" name="button">Edit <%=card.name%></button></a>
-            <form class="" action="/card/<%=card._id%>?_method=DELETE" method="POST">
-                <input type="submit" name="" value="Delete <%=card.name%>">
-            </form>
-        </nav>
-
-
     </body>
 </html>
