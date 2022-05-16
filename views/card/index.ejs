@@ -28,16 +28,17 @@
             <div class="card-serach-container">
                 <div class="card-search-bar">
                     <h3>Card Search</h3>
-                    <span class="search-bar">
-                        <p>Search by Card Name:</p>
-                        <input id="search-name-text" type="text" name="search-card-name" value="">
-                        <button id="search-name-button" type="button" name="button">Search</button>
-                    </span>
+                    <form class="search-form" action="/card/index" method="GET">
+                            <input id="search-name-text" type="text" name="search" value="">
+                            <input type="submit" name="" value="Search by Name">
+                    </form>
                 </div>
                 <div id="search-result">
-                    <div id="result-img-wrapper">
-                        <img src="https://c1.scryfall.com/file/scryfall-cards/large/front/b/1/b125d1e7-5d9b-4997-88b0-71bdfc19c6f2.jpg?1562863790" alt="">
-                    </div>
+                    <ul id="search-result-list">
+                        <% for (let i = 0; i < cardSearch.length; i++) {%>
+                            <li> <a href="/card/<%=cardSearch[i]._id%>"><%=cardSearch[i].name%></a> </li>
+                        <% } %>
+                    </ul>
                 </div>
                 <nav id="new-card-nav">
                     <a href="/card/new"> <button type="button" name="button">Add New Card</button> </a>

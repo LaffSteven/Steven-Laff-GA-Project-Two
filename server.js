@@ -88,12 +88,28 @@ app.get('/' , (req, res) => {
 
 // GET Card Index Page
 app.get('/card/index', (req, res) => {
-    Card.find({}, (err, cardData) => {
-        res.render('./card/index.ejs', {
-            cards: cardData,
-            titleTag: "Card List"
+    // console.log(req.query);
+    if (req.query.search) {
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        Card.find({}, (err, cardData) => {
+            Card.find({name: regex}, (err, searchResults) => {
+                console.log(searchResults);
+                res.render('./card/index.ejs', {
+                    cards: cardData,
+                    cardSearch: searchResults,
+                    titleTag: "Card List"
+                });
+            });
         });
-    });
+
+    } else {
+        Card.find({}, (err, cardData) => {
+            res.render('./card/index.ejs', {
+                cards: cardData,
+                titleTag: "Card List"
+            });
+        });
+    }
 });
 
 // GET New Card Page
@@ -104,13 +120,13 @@ app.get('/card/new', (req, res) => {
 });
 // POST new card
 app.post('/card', (req, res) => {
-    console.log(req.body);
-    const cardConstructor = {}
+    // console.log(req.body);
+
     Card.create(req.body, (err, createdCard) => {
         if (err) {
             console.log(err.message);
         }
-        console.log(createdCard);
+        // console.log(createdCard);
         res.redirect('/card/index');
     });
 });
@@ -151,6 +167,10 @@ app.get('/card/:id/edit', (req, res) => {
     });
 });
 
+// found at: https://stackoverflow.com/questions/38421664/fuzzy-searching-with-mongodb
+const escapeRegex = (text) => {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 //___________________
 //Listener

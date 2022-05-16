@@ -46,7 +46,7 @@
 .card-search-bar h3 {
     text-align: center;
 }
-.card-search-bar span {
+.search-form {
     height: 2em;
     padding: .5em;
     display: flex;
