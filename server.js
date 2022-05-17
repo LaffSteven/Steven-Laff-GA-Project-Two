@@ -79,8 +79,10 @@ app.get('/deck/data/seed', (req, res) => {
 //GET Home Page
 app.get('/' , (req, res) => {
     Card.find({}, (err, cardData) => {
+        const randomCard = Math.floor(Math.random() * (cardData.length - 1))
         res.render('index.ejs', {
             cards: cardData,
+            randomCard: randomCard,
             titleTag: "Home"
         });
     });

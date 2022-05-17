@@ -3,6 +3,7 @@
 
     <!-- Head -->
     <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="./css/home-page.css">
     <!-- Head -->
 
     <body>
@@ -11,16 +12,56 @@
         <%- include ('./partials/header.ejs') %>
         <!-- Header -->
 
-        <h1>Welcome to Arcane Planes</h1>
-        <h2>MTG Card Database and Deckbuilder</h2>
+        <section class='content-section'>
+            <div class="card-list-container">
+                <h4>Card List</h4>
+                <div class="ul-wrapper">
+                    <ul id="hp-card-list">
+                        <% for (let i = 0; i < cards.length; i++) {%>
+                            <li> <a href="/card/<%=cards[i]._id%>"> <%=cards[i].name%> </a> </li>
+                        <% } %>
+                    </ul>
+                </div>
+                <nav>
+                    <a href="/card/index"><button type="button" name="button">View Full Card List</button></a>
+                </nav>
+            </div>
 
-        <div class="list-container">
-            <ul id="hp-card-list">
-                <% for (let i = 0; i < cards.length; i++) {%>
-                    <li> <a href="/card/<%=cards[i]._id%>"> <%=cards[i].name%> </a> </li>
-                <% } %>
-            </ul>
-        </div>
+            <div class="right-side-container">
+                <div class="content-card">
+                    <h3 class="card-title">MTG News</h3>
+                    <div class="content-card-content">
+                        <a class="news" id="news-1" href="https://mtgrocks.com/mtgs-latest-specialty-foiling-treatment-is-actually-popular-for-once/">
+                            <div class="news-text">
+                                <h4>Specialty Foiling Treatment is Actually Popular For Once</h4>
+                            </div>
+                        </a>
+                        <a class="news" id="news-2" href="https://magic.wizards.com/en/articles/archive/news/your-sneak-peek-double-masters-2022-dominaria-united-and-beyond-2022-05-12">
+                            <div class="news-text">
+                                <h4>DOUBLE MASTERS 2022</h4>
+                            </div>
+                        </a>
+                        <a class="news" id="news-3" href="https://mtgazone.com/3-different-standard-decks-on-breaking-arcane-bombardment/">
+                            <div class="news-text">
+                                <h4>3 Different Standard Decks on Breaking Arcane Bombardment</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content-card" id="lower-card">
+                    <h3 class="card-title">Card of the Moment</h3>
+                    <div class="random-card-container">
+                        <a class="card-display" href="/card/<%=cards[randomCard]._id%>">
+                            <img src="<%=cards[randomCard].img%>" alt="">
+                            <div class="random-card-text-container">
+                                <h4><%=cards[randomCard].name%></h4>
+                                <p><%=cards[randomCard].text%></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer -->
         <%- include ('./partials/footer.ejs') %>
