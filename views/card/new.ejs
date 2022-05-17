@@ -3,6 +3,7 @@
 
     <!-- Head -->
     <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="../css/new-card.css">
     <!-- Head -->
 
     <body>
@@ -11,9 +12,108 @@
         <%- include ('../partials/header.ejs') %>
         <!-- Header -->
 
-        <h1>Enter New Card Info</h1>
-
-        <form class="new-card-form" action="/card" method="POST">
+        <div class="new-card">
+            <h1>Enter New Card Info</h1>
+            <form class="new-card-form" action="/card" method="POST">
+                <table>
+                    <h4>Card Name</h4>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name" ></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Mana Cost</h4>
+                    <tr>
+                        <td>Red</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.red"></td>
+                    </tr>
+                    <tr>
+                        <td>Green</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.green"></td>
+                    </tr>
+                    <tr>
+                        <td>Blue</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.blue"></td>
+                    </tr>
+                    <tr>
+                        <td>White</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.white"></td>
+                    </tr>
+                    <tr>
+                        <td>Black</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.black"></td>
+                    </tr>
+                    <tr>
+                        <td>Colorless</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.colorless"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Card Image</h4>
+                    <tr>
+                        <td>Image URL</td>
+                        <td><input type="text" name="img" ></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Card Type</h4>
+                    <tr>
+                        <td>Type</td>
+                        <td><input type="text" name="typeLine.mainType" ></td>
+                    </tr>
+                    <tr>
+                        <td>Subtype</td>
+                        <td><input type="text" name="typeLine.subTypes"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Card Text</h4>
+                    <tr>
+                        <td>Text</td>
+                        <td><input type="text" name="text"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Stats</h4>
+                    <tr>
+                        <td>Power</td>
+                        <td><input type="text" name="stats.power"></td>
+                    </tr>
+                    <tr>
+                        <td>Toughness</td>
+                        <td><input type="text" name="stats.toughness"></td>
+                    </tr>
+                    <tr>
+                        <td>Loyalty</td>
+                        <td><input type="text" name="stats.loyalty"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>More Info</h4>
+                    <tr>
+                        <td>Rarity</td>
+                        <td><input type="text" name="rarity" ></td>
+                    </tr>
+                    <tr>
+                        <td>Expansion</td>
+                        <td><input type="text" name="misc.expansion" ></td>
+                    </tr>
+                    <tr>
+                        <td>Illustrator</td>
+                        <td><input type="text" name="misc.illustrator" ></td>
+                    </tr>
+                    <tr>
+                        <td>Collector Number</td>
+                        <td><input type="text" name="misc.collectorNum" ></td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <input type="submit" name="" value="Save New Card">
+            </form>
+        </div>
+        <!-- <form class="new-card-form" action="/card" method="POST">
             name: <input type="text" name="name" > <br>
             <br>
             Mana Cost: <br>
@@ -26,12 +126,12 @@
             <br>
             img: <input type="text" name="img" ><br>
             type: <input type="text" name="typeLine.mainType" ><br>
-            subtype: <input type="text" name="typeLine.subTypes" ><br>
+            subtype: <input type="text" name="typeLine.subTypes"><br>
             rarity: <input type="text" name="rarity" ><br>
-            text: <input type="text" name="text" ><br>
+            text: <input type="text" name="text"><br>
             stats:
-                power: <input type="text" name="stats.power" ><br>
-                toughness: <input type="text" name="stats.toughness" ><br>
+                power: <input type="text" name="stats.power"><br>
+                toughness: <input type="text" name="stats.toughness"><br>
                 loyalty: <input type="text" name="stats.loyalty" ><br>
             misc: {
                 expansion: <input type="text" name="misc.expansion" ><br>
@@ -39,7 +139,7 @@
                 collectorNum: <input type="text" name="misc.collectorNum" ><br>
                 <br>
                 <input type="submit" name="" value="Save New Card">
-        </form>
+        </form> -->
 
         <!-- Footer -->
         <%- include ('../partials/footer.ejs') %>
