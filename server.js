@@ -88,24 +88,23 @@ app.get('/' , (req, res) => {
 
 // GET Card Index Page
 app.get('/card/index', (req, res) => {
-    // console.log(req.query);
     if (req.query.search) {
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
         Card.find({}, (err, cardData) => {
-            Card.find({name: regex}, (err, searchResults) => {
-                console.log(searchResults);
+            Card.find({name: regex}, (err, searchData) => {
+                // console.log(searchData);
                 res.render('./card/index.ejs', {
                     cards: cardData,
-                    cardSearch: searchResults,
+                    searchResults: searchData,
                     titleTag: "Card List"
                 });
             });
         });
-
     } else {
         Card.find({}, (err, cardData) => {
             res.render('./card/index.ejs', {
                 cards: cardData,
+                searchResults: [],
                 titleTag: "Card List"
             });
         });

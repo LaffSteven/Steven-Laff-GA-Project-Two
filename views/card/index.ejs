@@ -33,13 +33,15 @@
                             <input type="submit" name="" value="Search by Name">
                     </form>
                 </div>
-                <div id="search-result">
-                    <ul id="search-result-list">
-                        <% for (let i = 0; i < cardSearch.length; i++) {%>
-                            <li> <a href="/card/<%=cardSearch[i]._id%>"><%=cardSearch[i].name%></a> </li>
-                        <% } %>
-                    </ul>
-                </div>
+                <% if (searchResults.length > 0) { %>
+                    <div id="search-result">
+                        <ul id="search-result-list">
+                            <% for (let i = 0; i < searchResults.length; i++) {%>
+                                <li> <a href="/card/<%=searchResults[i]._id%>"><%=searchResults[i].name%></a> </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <% } %>
                 <nav id="new-card-nav">
                     <a href="/card/new"> <button type="button" name="button">Add New Card</button> </a>
                 </nav>
