@@ -3,6 +3,7 @@
 
     <!-- Head -->
     <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="../css/edit-card.css">
     <!-- Head -->
 
     <body>
@@ -11,27 +12,107 @@
         <%- include ('../partials/header.ejs') %>
         <!-- Header -->
 
-        <h1>Edit <%=card.name%></h1>
-
-        <form class="" action="/card/<%=card._id%>?_method=PUT" method="post">
-            name: <input type="text" name="name" value="<%=card.name%>"> <br>
-            img: <input type="text" name="img" value="<%=card.img%>"><br>
-            type: <input type="text" name="typeLine.mainType" value="<%=card.typeLine.mainType%>"><br>
-            subtype: <input type="text" name="typeLine.subTypes" value="<%=card.typeLine.subTypes%>"><br>
-            rarity: <input type="text" name="rarity" value="<%=card.rarity%>"><br>
-            text: <input type="text" name="text" value="<%=card.text%>"><br>
-            stats:
-                power: <input type="text" name="stats.power" value="<%=card.stats.power%>"><br>
-                toughness: <input type="text" name="stats.toughness" value="<%=card.stats.toughness%>"><br>
-                loyalty: <input type="text" name="stats.loyalty" value="<%=card.stats.loyalty%>"><br>
-            misc: {
-                expansion: <input type="text" name="misc.expansion" value="<%=card.misc.expansion%>"><br>
-                illustrator: <input type="text" name="misc.illustrator" value="<%=card.misc.expansion%>"><br>
-                collectorNum: <input type="text" name="misc.collectorNum" value="<%=card.misc.collectorNum%>"><br>
+        <div class="edit-card">
+            <h1>Edit info for: <%=card.name%></h1>
+            <form class="edit-card-form" action="/card/<%=card._id%>?_method=PUT" method="POST">
+                <table>
+                    <h4>Card Name</h4>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name" value="<%=card.name%>"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Mana Cost</h4>
+                    <tr>
+                        <td>Red</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.red" value="<%=card.manaCost.red%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Green</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.green" value="<%=card.manaCost.green%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Blue</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.blue" value="<%=card.manaCost.blue%>"></td>
+                    </tr>
+                    <tr>
+                        <td>White</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.white" value="<%=card.manaCost.white%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Black</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.black" value="<%=card.manaCost.black%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Colorless</td>
+                        <td><input class="mana-cost" type="number" name="manaCost.colorless" value="<%=card.manaCost.colorless%>"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Card Image</h4>
+                    <tr>
+                        <td>Image URL</td>
+                        <td><input type="text" name="img" value="<%=card.img%>"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Card Type</h4>
+                    <tr>
+                        <td>Type</td>
+                        <td><input type="text" name="typeLine.mainType" value="<%=card.typeLine.mainType%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Subtype</td>
+                        <td><input type="text" name="typeLine.subTypes" value="<%=card.typeLine.subTypes%>"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Card Text</h4>
+                    <tr>
+                        <td>Text</td>
+                        <td><input type="text" name="text" value="<%=card.text%>"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>Stats</h4>
+                    <tr>
+                        <td>Power</td>
+                        <td><input type="text" name="stats.power" value="<%=card.stats.power%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Toughness</td>
+                        <td><input type="text" name="stats.toughness" value="<%=card.stats.power%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Loyalty</td>
+                        <td><input type="text" name="stats.loyalty" value="<%=card.stats.loyalty%>"></td>
+                    </tr>
+                </table>
+                <table>
+                    <h4>More Info</h4>
+                    <tr>
+                        <td>Rarity</td>
+                        <td><input type="text" name="rarity" value="<%=card.rarity%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Expansion</td>
+                        <td><input type="text" name="misc.expansion" value="<%=card.misc.expansion%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Illustrator</td>
+                        <td><input type="text" name="misc.illustrator" value="<%=card.misc.illustrator%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Collector Number</td>
+                        <td><input type="text" name="misc.collectorNum" value="<%=card.misc.collectorNum%>"></td>
+                    </tr>
+                </table>
                 <br>
-                <input type="submit" name="" value="Save Changes">
-        </form>
-
+                <br>
+                <input type="submit" name="" value="Save New Card">
+            </form>
+        </div>
 
         <!-- Footer -->
         <%- include ('../partials/footer.ejs') %>
