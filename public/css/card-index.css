@@ -21,6 +21,9 @@
     overflow-y: auto;
 
 }
+.card-list-container h1 {
+    text-align: center;
+}
 #ci-card-list {
     padding-left: 33%;
 }

@@ -15,10 +15,9 @@
         <%- include ('../partials/header.ejs') %>
         <!-- Header -->
 
-        <h1>List of cards</h1>
-
         <section class="content-section">
             <div class="card-list-container">
+                <h1>Card Index</h1>
                 <ul id="ci-card-list">
                     <% for (let i = 0; i < cards.length; i++) {%>
                         <li> <a href="/card/<%=cards[i]._id%>"><%=cards[i].name%></a> </li>
